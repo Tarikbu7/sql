@@ -1,12 +1,6 @@
-# BlogDB SQL Script – One Page
-
-```sql
--- 1️⃣ Create database
 CREATE DATABASE BlogDB;
 USE BlogDB;
-
--- 2️⃣ Create tables
-CREATE TABLE Utilisateur (
+ CREATE TABLE Utilisateur (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nom VARCHAR(100) NOT NULL,
   email VARCHAR(100) UNIQUE,
@@ -31,18 +25,6 @@ CREATE TABLE Commentaire (
   FOREIGN KEY (id_article) REFERENCES Article(id)
 );
 
--- 3️⃣ Verify tables
 SHOW TABLES;
 
--- 4️⃣ Test insertion
-INSERT INTO Utilisateur (nom, email, mot_de_passe)
-VALUES ('Alice', 'alice@test.com', '1234');
-```
-
-## Key Points
-
-* **Order matters**: Create parent tables first (Utilisateur) before child tables (Article, Commentaire)
-* **PRIMARY KEY** = unique identifier
-* **FOREIGN KEY** = links tables for data consistency
-* `NOT NULL` = mandatory, `UNIQUE` = no duplicates
-* Run once to create the full database structure and test it
+INSERT INTO Utilisateur (nom, email, mot_de_passe) VALUES ('Alice', 'alice@test.com', '1234');
